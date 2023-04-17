@@ -4,8 +4,8 @@
 
 Welcome to the repository of HuatuoGPT, a large language model (LLM) trained on a vast Chinese medical corpus. Our objective with HuatuoGPT is to construct a more professional ‘ChatGPT’ for medical consultation scenarios. Here is a list of what has been released:
 
-1. Huatuo-300K (Medical Instruction Dataset): a  high-qulity instruction dataset that sampled from HuatuoGPT training corpus.
-2. Medical-Chat LLMs: weights of a set of popular LLMs trained on our Huatuo-300K.
+1. Huatuo-200K (Medical Instruction Dataset): a  high-qulity instruction dataset that sampled from HuatuoGPT training corpus.
+2. Medical-Chat LLMs: weights of a set of popular LLMs trained on our Huatuo-200K.
 3. HuatuoGPT: a currently beta version HuatuoGPT online.
 4. Medical evaluation benchmark: an evaluation method used to evaluate several LLMs in medical domain.
 
@@ -19,7 +19,7 @@ Hope our repository will help enhance the field of intelligent medicine and its 
 
 # 📚Data
 
-We have gathered hundreds of billion tokens of online data to create a high-quality medical training corpus for HuatuoGPT. We also selected 300K pieces from this dataset as medical instruction data, named Huatuo-300K. This subset is adequate for fine-tuning LLMs to create ChatGPT-like consultant models. We are releasing this resource to the public, enabling anyone to train their very own intelligent doctor. 
+We have gathered hundreds of billion tokens of online data to create a high-quality medical training corpus for HuatuoGPT. We also selected 200K pieces from this dataset as medical instruction data, named Huatuo-200K. This subset is adequate for fine-tuning LLMs to create ChatGPT-like consultant models. We are releasing this resource to the public, enabling anyone to train their very own intelligent doctor. 
 
 | Category                                                     | Scale | Descriptions                                                 | Examples                                                     |
 | ------------------------------------------------------------ | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
