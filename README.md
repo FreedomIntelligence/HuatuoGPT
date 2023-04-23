@@ -59,3 +59,12 @@ Our goal with HuatuoGPT is to address the need for quick medical consultations, 
 - Bias: LLMs are trained on large datasets, which can inadvertently introduce bias into the model's responses. Additionally, care should be taken to ensure that the model is not used to perpetuate biases in medical treatment.
 
 # Acknowledgement
+
+
+
+# References
+
+HuatuoGPT, taming Language models to follow medical instructions in conversation.
+
+Less is more, taming Language models to follow medical instructions in conversation using 200k samples.
+
