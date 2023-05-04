@@ -1,4 +1,4 @@
-# HuatuoGPT(华佗GPT)
+# HuatuoGPT(华佗GPT): taming large language models to follow medical instruction.
 
 # 👨‍⚕️Introduction
 
