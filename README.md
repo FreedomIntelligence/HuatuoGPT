@@ -36,6 +36,10 @@ We have gathered hundreds of billion tokens of online data to create a high-qual
 - ChatGLM-Huatuo200K
 - Llama-Huatuo200K
 
+# Demo
+![Untitled](images/demo_1.png)
+
+![Untitled](images/demo_2.png)
 
 ## Evaluations
 
