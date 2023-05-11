@@ -19,6 +19,12 @@ Hope our repository will help enhance the field of intelligent medicine and its 
 
 # 📚Data
 
+
+
+## Data Examples: 
+
+
+
 We have gathered hundreds of billion tokens of online data to create a high-quality medical training corpus for HuatuoGPT. We also selected 200K pieces from this dataset as medical instruction data, named Huatuo-200K. This subset is adequate for fine-tuning LLMs to create ChatGPT-like consultant models. We are releasing this resource to the public, enabling anyone to train their very own intelligent doctor. 
 
 | Category                          | Scale | Descriptions                                                 | Examples                                                     |
@@ -28,6 +34,28 @@ We have gathered hundreds of billion tokens of online data to create a high-qual
 | Medical Multi-Round consultants   | 20K   | Medical multi-round conversations in real-world scenarios. Conversations include multiple rounds of questioning by doctors and continuous questioning by patients. | 💬：额头下巴下长满痘痘。就是不知道.<br>👨‍⚕️：你好，有什么困扰吗？我可以为你提供帮助。请问您平时的饮食习惯、睡眠和护肤习惯怎样？化妆品和防晒霜的使用频率如何？还有洁面的频次是怎样的呢？<br>💬：平时我基本上只是用水乳霜，然后洗面奶只用一种。日常防晒只有在夏天时会使用，我一般用悦诗风吟的洗面奶以及AHC的护肤产品，这些都比较温和。<br>👨‍⚕️：谢谢您的描述。首先，建议您停用化妆品和普通护肤品，使用特定的药妆品牌，如雅漾和理肤泉的洁面泡沫或洁面乳，并避免使用热水或肥皂清洗面部。建议您外用阿达帕林凝胶涂于面部痤疮，一般夜间使用，涂抹十五分钟之后外用医学护肤品比如雅漾、薇资、理肤泉清爽型的舒缓面霜，或者是维生素e乳膏…. |
 | General Instructions              | 10K   | Sampled general instructions. Mainly are generated with the method of self-instruct. | 💬：给出一个成熟男人潜移默化间可以去实践的人生哲学。<br>👨‍⚕️：回顾你曾经有过的每一次经历并从中学习，并认真而深刻地感受这些经历带给你的教训。这样，你每天都可以从中获得更多自信和动力，更好地去面对生活中的新挑战。以真诚与仁爱为基础，以善待他人及自己为原则，以博爱与服务共存为哲学，以不断自我超越和进步为目标…. |
 | General Multi-Round Conversations | 10K   | General conversations with ChatGPT. Mainly are from real conversations between users and ChatGPT. | 💬：三级公立医院绩效考核自评报告怎么写<br>👨‍⚕️：编写三级公立医院绩效考核自评报告需要遵循以下步骤：<br>&emsp;&emsp;1.梳理考核指标：仔细阅读考核指标，将其进行分类、梳理，理清考核指标之间的关系和重要性… <br>💬：请写一篇6000字左右的示例。<br>👨‍⚕️：很抱歉，我是一名人工智能语言模型，无法为您提供长篇6000字左右的示例。我可以提供一些写作建议和范例，以帮助您编写三级公立医院绩效考核自评报告。<br>&emsp;&emsp;1. 简介…. |
+
+
+
+## Data Usage:
+
+We currently open source three sub-datasets, namely [huatuo_knowledge_graph_qa](https://huggingface.co/datasets/FreedomIntelligence/huatuo_knowledge_graph_qa) from the knowledge graph, [huatuo_encyclopedia_qa](https://huggingface.co/datasets/FreedomIntelligence/huatuo_encyclopedia_qa) from the wiki data, and [huatuo_consultation_qa](https://huggingface.co/datasets/FreedomIntelligence/huatuo_consultation_qa) from the question-and-answer data, which are used as follows:
+
+
+
+```python
+import datasets
+    
+knowledge_graph_dataset = datasets.load_dataset('FreedomIntelligence/huatuo_knowledge_graph_qa')
+
+encyclopedia_dataset = datasets.load_dataset('FreedomIntelligence/huatuo_encyclopedia_qa')
+# Only the url in the answer
+consultation_dataset = datasets.load_dataset('FreedomIntelligence/huatuo_consultation_qa')
+```
+
+
+
+
 
 # Models
 
