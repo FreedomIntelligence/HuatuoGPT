@@ -9,7 +9,7 @@ import argparse
 
 def load_model(model_name, device, num_gpus, load_8bit=False):
     if device == "cuda":
-        kwargs = {"torch_dtype": torch.float16}
+        kwargs = {"torch_dtype": torch.float32}
         if load_8bit:
             if num_gpus != "auto" and int(num_gpus) != 1:
                 print("8-bit weights are not supported on multiple GPUs. Revert to use one GPU.")
