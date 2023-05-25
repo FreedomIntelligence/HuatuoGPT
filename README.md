@@ -60,6 +60,26 @@ Our goal with HuatuoGPT is to address the need for quick medical consultations, 
 
 ## Acknowledgement
 
+We are aware that our works are inspired by the following works, including but not limited to
+
+- Bloom: https://huggingface.co/bigscience/bloom
+- Self-instruct: https://github.com/yizhongw/self-instruct
+
+Without these, nothing could happen in this repository.
+
+## Citation
+```angular2
+@article{huatuogpt-2023,
+  title={HuatuoGPT, Towards Taming Language Models To Be a Doctor},
+  author={Hongbo Zhang and Junying Chen and Feng Jiang and Fei Yu and Zhihong Chen and Jianquan Li and Guiming Chen and Xiangbo Wu and Zhiyi Zhang and Qingying Xiao and Xiang Wan and Benyou Wang and Haizhou Li},
+  journal={arXiv preprint arXiv:2305.15075},
+  year={2023}
+}
+```
+
+We are from the School of Data Science, the Chinese University of Hong Kong, Shenzhen (CUHKSZ) and the Shenzhen Rsearch
+Institute of Big Data (SRIBD).
+
 ## References
 
 HuatuoGPT, taming Language models to follow medical instructions in conversation.
