@@ -1,30 +1,23 @@
 # HuatuoGPT(华佗GPT): taming large language models to follow medical instruction.
 
-# 👨‍⚕️Introduction
-
+## 👨‍⚕️Introduction
 Welcome to the repository of HuatuoGPT, a large language model (LLM) trained on a vast Chinese medical corpus. Our objective with HuatuoGPT is to construct a more professional ‘ChatGPT’ for medical consultation scenarios. Here is a list of what has been released:
 
 1. Huatuo-200K (Medical Instruction Dataset): a  high-qulity instruction dataset that sampled from HuatuoGPT training corpus.
 2. Medical-Chat LLMs: weights of a set of popular LLMs trained on our Huatuo-200K.
-3. HuatuoGPT: a currently beta version HuatuoGPT online.
+3. HuatuoGPT: a currently beta-version HuatuoGPT online.
 4. Medical evaluation benchmark: an evaluation method used to evaluate several LLMs in medical domain.
 
 Hope our repository will help enhance the field of intelligent medicine and its related applications.
 
-# 💭Motivation
-
+## 💭Motivation
 - To address the growing demand for quick medical consultations both online and in hospitals that do not necessarily require deep medical knowledge. We believe that LLMs like HuatuoGPT can be effectively utilized to meet these demands, freeing up physicians’ time and energy for more complex cases.
 - To provide open data for training medical LLMs. Building high-quality instruction training data for LLMs is essential, but it can be also challenging. We have constructed medical instruction data using various methods and made it publicly available. This dataset can be combined with other datasets to train one's own medical 'ChatGPT'.
 - To emphasize the importance of carefully evaluating the ability of medical LLMs before using them to offer medical assistance to patients. We recognize the potential benefits of LLMs in the medical field, but also acknowledge the need for thorough evaluation and testing to ensure patient safety and accurate diagnoses.
 
-# 📚Data
+## 📚Data
 
-
-
-## Data Examples: 
-
-
-
+### Data Examples:
 We have gathered hundreds of billion tokens of online data to create a high-quality medical training corpus for HuatuoGPT. We also selected 200K pieces from this dataset as medical instruction data, named Huatuo-200K. This subset is adequate for fine-tuning LLMs to create ChatGPT-like consultant models. We are releasing this resource to the public, enabling anyone to train their very own intelligent doctor. 
 
 | Category                          | Scale | Descriptions                                                 | Examples                                                     |
@@ -35,13 +28,8 @@ We have gathered hundreds of billion tokens of online data to create a high-qual
 | General Instructions              | 10K   | Sampled general instructions. Mainly are generated with the method of self-instruct. | 💬：给出一个成熟男人潜移默化间可以去实践的人生哲学。<br>👨‍⚕️：回顾你曾经有过的每一次经历并从中学习，并认真而深刻地感受这些经历带给你的教训。这样，你每天都可以从中获得更多自信和动力，更好地去面对生活中的新挑战。以真诚与仁爱为基础，以善待他人及自己为原则，以博爱与服务共存为哲学，以不断自我超越和进步为目标…. |
 | General Multi-Round Conversations | 10K   | General conversations with ChatGPT. Mainly are from real conversations between users and ChatGPT. | 💬：三级公立医院绩效考核自评报告怎么写<br>👨‍⚕️：编写三级公立医院绩效考核自评报告需要遵循以下步骤：<br>&emsp;&emsp;1.梳理考核指标：仔细阅读考核指标，将其进行分类、梳理，理清考核指标之间的关系和重要性… <br>💬：请写一篇6000字左右的示例。<br>👨‍⚕️：很抱歉，我是一名人工智能语言模型，无法为您提供长篇6000字左右的示例。我可以提供一些写作建议和范例，以帮助您编写三级公立医院绩效考核自评报告。<br>&emsp;&emsp;1. 简介…. |
 
-
-
-## Data Usage:
-
+### Data Usage:
 We currently open source three sub-datasets, namely [huatuo_knowledge_graph_qa](https://huggingface.co/datasets/FreedomIntelligence/huatuo_knowledge_graph_qa) from the knowledge graph, [huatuo_encyclopedia_qa](https://huggingface.co/datasets/FreedomIntelligence/huatuo_encyclopedia_qa) from the wiki data, and [huatuo_consultation_qa](https://huggingface.co/datasets/FreedomIntelligence/huatuo_consultation_qa) from the question-and-answer data, which are used as follows:
-
-
 
 ```python
 import datasets
@@ -53,36 +41,29 @@ encyclopedia_dataset = datasets.load_dataset('FreedomIntelligence/huatuo_encyclo
 consultation_dataset = datasets.load_dataset('FreedomIntelligence/huatuo_consultation_qa')
 ```
 
-
-
-
-
-# Models
+## Models
 
 - Bloomz-Huatuo200K
 - Phoenix-Huatuo200K
 - ChatGLM-Huatuo200K
 - Llama-Huatuo200K
 
-# Demo
+## Demo
 ![Untitled](images/demo_1.png)
 
 ![Untitled](images/demo_2.png)
 
-## Evaluations
-
+### Evaluations
 - Huatuo200K
 - ChatDoctor
 - DoctorGLM
-
 - Huatuo-Llama-Med-Chinese
 
-
-# HuatuoGPT
+## HuatuoGPT
 
 See our model in [https://www.huatuogpt.cn/](https://www.huatuogpt.cn/) (API key required). Note that it is still in progressing.
 
-# Limitations
+## Limitations
 
 Our goal with HuatuoGPT is to address the need for quick medical consultations, rather than replace doctors or provide full medical support to patients. However, our model does have several limitations that must be taken into consideration:
 
@@ -90,11 +71,9 @@ Our goal with HuatuoGPT is to address the need for quick medical consultations, 
 - Hallucinations: Large language models can sometimes generate responses that do not make sense or are completely unrelated to the given input. These "hallucinations" can be especially problematic when users are not familiar with the concepts being discussed, as they may not be able to easily recognize the errors in the model's output. These "hallucinations" can be a challenge to detect and avoid.
 - Bias: LLMs are trained on large datasets, which can inadvertently introduce bias into the model's responses. Additionally, care should be taken to ensure that the model is not used to perpetuate biases in medical treatment.
 
-# Acknowledgement
+## Acknowledgement
 
-
-
-# References
+## References
 
 HuatuoGPT, taming Language models to follow medical instructions in conversation.
 
