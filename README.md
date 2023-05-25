@@ -13,7 +13,7 @@ Here is a list of what has been released:
 3. Medical evaluation benchmark: an evaluation method used to evaluate LLMs in medical scenarios.
 
 <div align=center>
-<img src="assets/huatuo.png" width = "640" alt="HuatuoGPT" align=center style="background-color: white;"/>
+<img src="assets/huatuo.png" width = "640" alt="HuatuoGPT" align=center/>
 </div>
 
 
@@ -42,11 +42,11 @@ To leverage the best of both distilled data (from ChatGPT) and real-world data (
 
 ## Model
 
-###Model access
+### Model access
 
 - [HuatuoGPT-v1](https://huggingface.co/FreedomIntelligence/HuatuoGPT-7b-v1)
 
-###Deploy
+### Deploy
 
 Firstly, you should install all required packages
 ```bash
