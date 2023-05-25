@@ -1,4 +1,4 @@
-# HuatuoGPT (华佗GPT): taming large language models to follow medical instruction.
+# HuatuoGPT (华佗GPT), Towards Taming Language Models To Be a Doctor.
 
 ## 👨‍ Introduction
 Welcome to the repository of HuatuoGPT, a large language model (LLM) trained on a vast Chinese medical corpus. Our objective with HuatuoGPT is to construct a more professional ‘ChatGPT’ for medical consultation scenarios. Here is a list of what has been released:
