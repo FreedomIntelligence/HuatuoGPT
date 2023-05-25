@@ -1,6 +1,7 @@
 # HuatuoGPT (华佗GPT), Towards Taming Language Models To Be a Doctor.
+[[Paper]](https://arxiv.org/pdf/2305.15075.pdf)
 
-## 👨‍ Introduction
+## 👨‍⚕️Introduction
 Welcome to the repository of HuatuoGPT, a large language model (LLM) trained on a vast Chinese medical corpus. Our objective with HuatuoGPT is to construct a more professional ‘ChatGPT’ for medical consultation scenarios. Here is a list of what has been released:
 
 1. Huatuo-200K (Medical Instruction Dataset): a  high-quality instruction dataset that sampled from HuatuoGPT training corpus.
@@ -39,9 +40,9 @@ We have gathered hundreds of billion tokens of online data to create a high-qual
   
 
 ## Demo
-![Untitled](images/demo_1.png)
+![demo_1](assets/demo_1.png)
 
-![Untitled](images/demo_2.png)
+![demo_2](assets/demo_2.png)
 
 ## Evaluations
 - 
