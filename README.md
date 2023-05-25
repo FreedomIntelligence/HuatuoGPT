@@ -71,7 +71,13 @@ Try our model in [https://www.huatuogpt.cn/](https://www.huatuogpt.cn/). Note th
 <!-- ![demo_2](assets/demo_2.png) -->
 
 ## Evaluations
-- 1
+
+### Automatic Evaluation
+
+
+
+### Manual Evaluation
+
 
 ## Limitations
 
