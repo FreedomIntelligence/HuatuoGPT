@@ -1,8 +1,4 @@
 # HuatuoGPT (华佗GPT), Towards Taming Language Models To Be a Doctor.
-<div align=center>
-<img src="assets/huatuo.png" width = "640" alt="HuatuoGPT" align=center />
-</div>
-
 
 ## ✨ Latest News
 - [05/25/2023]: Release the [tech report](https://arxiv.org/pdf/2305.15075.pdf) and the HuatuoGPT [demo](https://www.huatuogpt.cn/).
@@ -14,9 +10,12 @@ Here is a list of what has been released:
 
 1. HuatuoGPT-SFT-data: A hybrid SFT data capitalizing on both strengths to endow the model with Doctor-like and Patient-friendly characteristics.
 2. HuatuoGPT model: HuatuoGPT model weights and the online demo.
-4. Medical evaluation benchmark: an evaluation method used to evaluate LLMs in medical scenarios.
+3. Medical evaluation benchmark: an evaluation method used to evaluate LLMs in medical scenarios.
 
-Hope our repository will help enhance the field of intelligent medicine and its related applications.
+<div align=center>
+<img src="assets/huatuo.png" width = "640" alt="HuatuoGPT" align=center />
+</div>
+
 
 ## 💭 Motivation
 - To address the growing demand for quick medical consultations both online and in hospitals that do not necessarily require deep medical knowledge. We believe that LLMs like HuatuoGPT can be effectively utilized to meet these demands, freeing up physicians’ time and energy for more complex cases.
@@ -41,23 +40,21 @@ To leverage the best of both distilled data (from ChatGPT) and real-world data (
 
   
 
-## Models
+## Model
 
-- HuatuoGPT
+- [HuatuoGPT-v1](https://huggingface.co/FreedomIntelligence/HuatuoGPT-7b-v1)
 
-  
+
 
 ## Demo
-![demo_1](assets/demo_1.png)
 
-![demo_2](assets/demo_2.png)
+Try our model in [https://www.huatuogpt.cn/](https://www.huatuogpt.cn/). Note that it is still in progressing.
+
+<!-- ![demo_1](assets/demo_1.png) -->
+<!-- ![demo_2](assets/demo_2.png) -->
 
 ## Evaluations
-- 
-
-## HuatuoGPT
-
-See our model in [https://www.huatuogpt.cn/](https://www.huatuogpt.cn/). Note that it is still in progressing.
+- 1
 
 ## Limitations
 
