@@ -1,5 +1,4 @@
 # HuatuoGPT (华佗GPT), Towards Taming Language Models To Be a Doctor.
-[[Paper]](https://arxiv.org/pdf/2305.15075.pdf)
 
 ## 👨‍⚕️ Introduction
 Welcome to the repository of HuatuoGPT, a large language model (LLM) trained on a vast Chinese medical corpus. Our objective with HuatuoGPT is to construct a more professional ‘ChatGPT’ for medical consultation scenarios. 
@@ -14,7 +13,7 @@ Here is a list of what has been released:
 Hope our repository will help enhance the field of intelligent medicine and its related applications.
 
 ## ✨ Latest News
-- [05/25/2023]: Release the tech report and the HuatuoGPT [demo](https://www.huatuogpt.cn/).
+- [05/25/2023]: Release the [tech report](https://arxiv.org/pdf/2305.15075.pdf) and the HuatuoGPT [demo](https://www.huatuogpt.cn/).
 
 ## 💭 Motivation
 - To address the growing demand for quick medical consultations both online and in hospitals that do not necessarily require deep medical knowledge. We believe that LLMs like HuatuoGPT can be effectively utilized to meet these demands, freeing up physicians’ time and energy for more complex cases.
