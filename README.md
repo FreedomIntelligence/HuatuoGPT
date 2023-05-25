@@ -5,10 +5,9 @@ Welcome to the repository of HuatuoGPT, a large language model (LLM) trained on 
 
 Here is a list of what has been released:
 
-1. Huatuo-200K (Medical Instruction Dataset): a  high-quality instruction dataset that sampled from HuatuoGPT training corpus.
-2. Medical-Chat LLMs: weights of a set of popular LLMs trained on our Huatuo-200K.
-3. HuatuoGPT: a currently beta-version HuatuoGPT online.
-4. Medical evaluation benchmark: an evaluation method used to evaluate several LLMs in medical domain.
+1. HuatuoGPT-SFT-data: A hybrid SFT data capitalizing on both strengths to endow the model with Doctor-like and Patient-friendly characteristics.
+2. HuatuoGPT model: HuatuoGPT model weights and the online demo.
+4. Medical evaluation benchmark: an evaluation method used to evaluate LLMs in medical scenarios.
 
 Hope our repository will help enhance the field of intelligent medicine and its related applications.
 
