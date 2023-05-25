@@ -13,7 +13,7 @@ Here is a list of what has been released:
 3. Medical evaluation benchmark: an evaluation method used to evaluate LLMs in medical scenarios.
 
 <div align=center>
-<img src="assets/huatuo.png" width = "640" alt="HuatuoGPT" align=center />
+<img src="assets/huatuo.png" width = "640" alt="HuatuoGPT" align=center style="background-color: white;"/>
 </div>
 
 
@@ -42,9 +42,26 @@ To leverage the best of both distilled data (from ChatGPT) and real-world data (
 
 ## Model
 
+###Model access
+
 - [HuatuoGPT-v1](https://huggingface.co/FreedomIntelligence/HuatuoGPT-7b-v1)
 
+###Deploy
 
+Firstly, you should install all required packages
+```bash
+pip install -r requirements.txt
+```
+
+Please make sure you have download our model weights and run
+```bash
+python -m huatuo_cli_demo_stream.py --model-name $model_dir
+```
+
+Note that you need at least 30GB GPU memory to load the full model. You can run the following code if you have limited GPU memory
+```bash
+python -m huatuo_cli_demo_stream.py --model-name $model_dir --load-8bit True
+```
 
 ## Demo
 
