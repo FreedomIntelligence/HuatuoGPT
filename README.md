@@ -1,7 +1,8 @@
 # HuatuoGPT (华佗GPT), Towards Taming Language Models To Be a Doctor.
 <div align=center>
-<img src="assets/method.pdf" width = "640" alt="HuatuoGPT" align=center />
+<img src="assets/huatuo.png" width = "640" alt="HuatuoGPT" align=center />
 </div>
+
 
 ## ✨ Latest News
 - [05/25/2023]: Release the [tech report](https://arxiv.org/pdf/2305.15075.pdf) and the HuatuoGPT [demo](https://www.huatuogpt.cn/).
