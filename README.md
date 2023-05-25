@@ -48,7 +48,7 @@ We have gathered hundreds of billion tokens of online data to create a high-qual
 
 ## HuatuoGPT
 
-See our model in [https://www.huatuogpt.cn/](https://www.huatuogpt.cn/) (API key required). Note that it is still in progressing.
+See our model in [https://www.huatuogpt.cn/](https://www.huatuogpt.cn/). Note that it is still in progressing.
 
 ## Limitations
 
