@@ -42,7 +42,7 @@ To leverage the best of both distilled data (from ChatGPT) and real-world data (
 
 ## 👨‍⚕️ Model
 
-### Model access
+### Model Access
 
 - [HuatuoGPT-v1](https://huggingface.co/FreedomIntelligence/HuatuoGPT-7b-v1)
 
@@ -85,6 +85,7 @@ Try our model in [https://www.huatuogpt.cn/](https://www.huatuogpt.cn/). Note th
 ### Expert Manual Evaluation
 
 * Single-turn question
+
 |  | Win | Loss |
 | --------------------------- | :--: | :--: |
 | **HuatuoGPT** vs. ChatGPT        |  52%  |  48%  |
