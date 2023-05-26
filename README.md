@@ -88,8 +88,8 @@ Try our model in [https://www.huatuogpt.cn/](https://www.huatuogpt.cn/). Note th
 
 |  | Win | Loss |
 | --------------------------- | :--: | :--: |
-| **HuatuoGPT** vs. ChatGPT        |  52%  |  48%  |
-| **HuatuoGPT** vs. GPT4 |  10.5%  |  89.5%  |
+| **HuatuoGPT** vs. DoctorGLM         |  98%  |  2%  |
+| **HuatuoGPT** vs. ChatGPT       |  **52%**  |  48%  |
 
 * Multi-turn diagnosis
 
