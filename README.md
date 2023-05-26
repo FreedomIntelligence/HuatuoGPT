@@ -3,7 +3,7 @@
 ## ✨ Latest News
 - [05/25/2023]: Release the [tech report](https://arxiv.org/pdf/2305.15075.pdf) and the HuatuoGPT [demo](https://www.huatuogpt.cn/).
 
-## 👨‍⚕️ Introduction
+## ⚡ Introduction
 Welcome to the repository of HuatuoGPT, a large language model (LLM) trained on a vast Chinese medical corpus. Our objective with HuatuoGPT is to construct a more professional ‘ChatGPT’ for medical consultation scenarios. 
 
 Here is a list of what has been released:
@@ -40,7 +40,7 @@ To leverage the best of both distilled data (from ChatGPT) and real-world data (
 
   
 
-## Model
+## 👨‍⚕️ Model
 
 ### Model access
 
@@ -63,23 +63,43 @@ Note that you need at least 30GB GPU memory to load the full model. You can run 
 python -m huatuo_cli_demo_stream.py --model-name $model_dir --load-8bit True
 ```
 
-## Demo
+
+
+## 🚀 Demo
 
 Try our model in [https://www.huatuogpt.cn/](https://www.huatuogpt.cn/). Note that it is still in progressing.
 
 <!-- ![demo_1](assets/demo_1.png) -->
 <!-- ![demo_2](assets/demo_2.png) -->
 
-## Evaluations
-
-### Automatic Evaluation
 
 
+## 🧐 Evaluations
 
-### Manual Evaluation
+### Automatic Evaluation Using GPT-4
+
+<div align=center>
+<img src="assets/eval1.png"  alt="eval1" align=center/>
+</div>
+
+### Expert Manual Evaluation
+
+* Single-turn question
+|  | Win | Loss |
+| --------------------------- | :--: | :--: |
+| **HuatuoGPT** vs. ChatGPT        |  52%  |  48%  |
+| **HuatuoGPT** vs. GPT4 |  10.5%  |  89.5%  |
+
+* Multi-turn diagnosis
+
+|  | Win | Loss |
+| --------------------------- | :--: | :--: |
+| **HuatuoGPT** vs. DoctorGLM         |  86%  |  14%  |
+| **HuatuoGPT** vs. ChatGPT       |  **58%**  |  42%  |
 
 
-## Limitations
+
+## 🤖 Limitations
 
 Our goal with HuatuoGPT is to address the need for quick medical consultations, rather than replace doctors or provide full medical support to patients. However, our model does have several limitations that must be taken into consideration:
 
@@ -108,10 +128,3 @@ Without these, nothing could happen in this repository.
 
 We are from the School of Data Science, the Chinese University of Hong Kong, Shenzhen (CUHKSZ) and the Shenzhen Rsearch
 Institute of Big Data (SRIBD).
-
-## References
-
-HuatuoGPT, taming Language models to follow medical instructions in conversation.
-
-Less is more, taming Language models to follow medical instructions in conversation using 200k samples.
-
