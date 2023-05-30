@@ -82,7 +82,7 @@ Try our model in [https://www.huatuogpt.cn/](https://www.huatuogpt.cn/). Note th
 <img src="assets/eval1.png"  alt="eval1" align=center/>
 </div>
 
-### Expert Manual Evaluation
+### Expert  Evaluation
 
 * Single-turn question
 
