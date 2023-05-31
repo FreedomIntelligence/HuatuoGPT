@@ -58,11 +58,6 @@ Please make sure you have download our model weights and run
 python -m huatuo_cli_demo_stream.py --model-name $model_dir
 ```
 
-Note that you need at least 30GB GPU memory to load the full model. You can run the following code if you have limited GPU memory
-```bash
-python -m huatuo_cli_demo_stream.py --model-name $model_dir --load-8bit True
-```
-
 
 
 ## 🚀 Demo

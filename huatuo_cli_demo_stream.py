@@ -7,23 +7,18 @@ import re
 import argparse
 
 
-def load_model(model_name, device, num_gpus, load_8bit=False):
+def load_model(model_name, device, num_gpus):
     if device == "cuda":
         kwargs = {"torch_dtype": torch.float32}
-        if load_8bit:
-            if num_gpus != "auto" and int(num_gpus) != 1:
-                print("8-bit weights are not supported on multiple GPUs. Revert to use one GPU.")
-            kwargs.update({"load_in_8bit": True, "device_map": "auto"})
+        if num_gpus == "auto":
+            kwargs["device_map"] = "auto"
         else:
-            if num_gpus == "auto":
-                kwargs["device_map"] = "auto"
-            else:
-                num_gpus = int(num_gpus)
-                if num_gpus != 1:
-                    kwargs.update({
-                        "device_map": "auto",
-                        "max_memory": {i: "13GiB" for i in range(num_gpus)},
-                    })
+            num_gpus = int(num_gpus)
+            if num_gpus != 1:
+                kwargs.update({
+                    "device_map": "auto",
+                    "max_memory": {i: "13GiB" for i in range(num_gpus)},
+                })
     elif device == "cpu":
         kwargs = {}
     else:
@@ -32,8 +27,7 @@ def load_model(model_name, device, num_gpus, load_8bit=False):
     tokenizer = AutoTokenizer.from_pretrained(model_name, padding_side="right", use_fast=True)
     model = AutoModelForCausalLM.from_pretrained(model_name, low_cpu_mem_usage=True, **kwargs)
 
-    # calling model.cuda() mess up weights if loading 8-bit weights
-    if device == "cuda" and num_gpus == 1 and not load_8bit:
+    if device == "cuda" and num_gpus == 1:
         model.cuda()
 
     return model, tokenizer
@@ -111,10 +105,8 @@ def chat_stream(model, tokenizer, query, history, max_new_tokens=512,
 def generate_prompt(query, history, eos):
     if not history:
         return f"""一位用户和智能医疗大模型HuatuoGPT之间的对话。对于用户的医疗问诊，HuatuoGPT给出准确的、详细的、温暖的指导建议。对于用户的指令问题，HuatuoGPT给出有益的、详细的、有礼貌的回答。<病人>：{query} <HuatuoGPT>："""
-        # return f"""A conversation between a patient and HuatuoGPT, an artificially intelligent doctor who gives helpful, detailed and polite answers to the patient's questions. \n\n Patient：{query} HuatuoGPT："""
     else:
         prompt = '一位用户和智能医疗大模型HuatuoGPT之间的对话。对于用户的医疗问诊，HuatuoGPT给出准确的、详细的、温暖的指导建议。对于用户的指令问题，HuatuoGPT给出有益的、详细的、有礼貌的回答。'
-        # prompt = "A conversation between a patient and HuatuoGPT, an artificially intelligent doctor who gives helpful, detailed and polite answers to the patient's questions. "
         for i, (old_query, response) in enumerate(history):
             prompt += "<病人>：{} <HuatuoGPT>：{}".format(old_query, response) + eos
         prompt += "<病人>：{} <HuatuoGPT>：".format(query)
@@ -122,7 +114,7 @@ def generate_prompt(query, history, eos):
 
 
 def main(args):
-    model, tokenizer = load_model(args.model_name, args.device, args.num_gpus, args.load_8bit)
+    model, tokenizer = load_model(args.model_name, args.device, args.num_gpus)
 
     model = model.eval()
 
@@ -157,14 +149,13 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model-name", type=str, default="facebook/opt-350m")
+    parser.add_argument("--model-name", type=str, default="HuatuoGPT")
     parser.add_argument("--device", type=str, choices=["cuda", "cpu"], default="cuda")
     parser.add_argument("--num-gpus", type=str, default="1")
-    parser.add_argument("--load-8bit", action="store_false")
-    parser.add_argument("--temperature", type=float, default=0.7)
+    # parser.add_argument("--load-8bit", action="store_true")
+    parser.add_argument("--temperature", type=float, default=0.5)
     parser.add_argument("--max-new-tokens", type=int, default=512)
     args = parser.parse_args()
 
     main(args)
-
 
