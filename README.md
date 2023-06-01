@@ -44,7 +44,7 @@ To leverage the best of both distilled data (from ChatGPT) and real-world data (
 
 ### Model Access
 
-- [HuatuoGPT-v1](https://huggingface.co/FreedomIntelligence/HuatuoGPT-7b-v1)
+- [HuatuoGPT-v1](https://huggingface.co/FreedomIntelligence/HuatuoGPT-7b-v1) (Currently unavailable, coming soon.)
 
 ### Deploy
 
