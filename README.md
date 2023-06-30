@@ -1,6 +1,7 @@
 # HuatuoGPT (华佗GPT), Towards Taming Language Models To Be a Doctor.
 
 ## ✨ Latest News
+- [06/30/2023]: Release the code, model weights of [HuatuoGPT-7B](https://huggingface.co/FreedomIntelligence/HuatuoGPT-7B) and [HuatuoGPT-13B](https://huggingface.co/FreedomIntelligence/HuatuoGPT-13b-delta)
 - [05/25/2023]: Release the [tech report](https://arxiv.org/pdf/2305.15075.pdf) and the HuatuoGPT [demo](https://www.huatuogpt.cn/).
 
 ## ⚡ Introduction
@@ -9,7 +10,7 @@ Welcome to the repository of HuatuoGPT, a large language model (LLM) trained on 
 Here is a list of what has been released:
 
 1. HuatuoGPT-SFT-data: A hybrid SFT data capitalizing on both strengths to endow the model with Doctor-like and Patient-friendly characteristics.
-2. HuatuoGPT model: HuatuoGPT model weights and the online demo.
+2. HuatuoGPT model: HuatuoGPT model weights(HuatuoGPT-7B and HuatuoGPT-13B) and the online demo. **HuatuoGPT-7B** is trained on **Baichuan-7B** and **HuatuoGPT-13B** is trained on **Ziya-LLaMA-13B-Pretrain-v1**.
 3. Medical evaluation benchmark: an evaluation method used to evaluate LLMs in medical scenarios.
 
 <div align=center>
@@ -43,8 +44,19 @@ To leverage the best of both distilled data (from ChatGPT) and real-world data (
 ## 👨‍⚕️ Model
 
 ### Model Access
+| Model                | Backbone      | Link                                                                          |
+|----------------------|---------------|-------------------------------------------------------------------------------|
+| HuatuoGPT-13B | Ziya-LLaMA-13B-Pretrain-v1 | [Delta](https://huggingface.co/FreedomIntelligence/HuatuoGPT-13b-delta) |
+| HuatuoGPT-7B      | Baichuan-7B | [Model Weights](https://huggingface.co/FreedomIntelligence/HuatuoGPT-7B)      |
 
-- [HuatuoGPT-v1](https://huggingface.co/FreedomIntelligence/HuatuoGPT-7b-v1) (Currently unavailable, coming soon.)
+
+Note that due to that HuatuoGPT-13B-delta is a LLaMA based model, we only release the delta of weights. You can download LLaMA-13B weights and use apply_delta.py to convert:
+```bash 
+python apply_delta.py \
+--base-model-path $LLaMA_Base_Path \
+--target-model-path $Save_Path \
+--delta-path $Delta_Path
+```
 
 ### Deploy
 
@@ -71,29 +83,61 @@ Try our model in [https://www.huatuogpt.cn/](https://www.huatuogpt.cn/). Note th
 
 ## 🧐 Evaluations
 
-### Automatic Evaluation Using GPT-4
+### Evaluation by GPT-4 and Doctors
+We invite GPT-4 and doctors to compare responses from HuatuoGPT(13B version) and other LLMs. Results are as below:
+
+- Single turn evaluation
 
 <div align=center>
-<img src="assets/eval1.png"  alt="eval1" align=center/>
+<img src="assets/single_turn_compare.png"  alt="eval1" align=center/>
 </div>
 
-### Expert  Evaluation
-
-* Single-turn question
-
-|  | Win | Loss |
-| --------------------------- | :--: | :--: |
-| **HuatuoGPT** vs. DoctorGLM         |  98%  |  2%  |
-| **HuatuoGPT** vs. ChatGPT       |  **52%**  |  48%  |
-
-* Multi-turn diagnosis
-
-|  | Win | Loss |
-| --------------------------- | :--: | :--: |
-| **HuatuoGPT** vs. DoctorGLM         |  86%  |  14%  |
-| **HuatuoGPT** vs. ChatGPT       |  **58%**  |  42%  |
+- Multi turn evaluation
+<div align=center>
+<img src="assets/multi_turn_compare.png"  alt="eval1" align=center/>
+</div>
 
 
+### Benchmark  Evaluation
+
+| Dataset   | Model | BLEU-1 | BLEU-2 | BLEU-3 | BLEU-4 | GLEU | ROUGE-1 | ROUGE-2 | ROUGE | Distinct-1 | Distinct-2 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| cMedQA2 | T5-finetuned | 20.88 | 11.87 | 7.69 | 5.09 | 7.62 | 27.16 | 9.30 | 20.11 | 0.41 | 0.52 |
+|  | HuatuoGPT | 27.39 | 14.38 | 8.06 | 4.55 | 8.52 | 29.26 | 8.02 | 15.46 | 0.74 | 0.93 |
+| WebMedQA | T5-finetuned | 21.42 | 13.79 | 10.06 | 7.38 | 8.94 | 31.00 | 13.85 | 25.78 | 0.37 | 0.46 |
+|  | HuatuoGPT | 24.85 | 13.42 | 7.72 | 4.51 | 7.50 | 28.30 | 7.72 | 14.50 | 0.73 | 0.93 |
+| Huatuo-26M | T5-finetuned | 26.63 | 16.74 | 11.77 | 8.46 | 11.38 | 33.21 | 13.26 | 24.85 | 0.51 | 0.68 |
+|  | HuatuoGPT | 27.42 | 14.84 | 8.54 | 4.96 | 8.01 | 29.16 | 8.29 | 15.84 | 0.74 | 0.93 |
+
+## ⚒️ Training
+### Prepare the Data
+You can download the SFT data from [HuatuoGPT-sft-data-v1](https://huggingface.co/datasets/FreedomIntelligence/HuatuoGPT-sft-data-v1) or buld your SFT data as the same schema.
+
+### Training
+You can train the model by:
+```bash
+accelerate launch \
+	--config_file scripts/sft.yaml \
+	--num_processes 8 \
+	--num_machines 1 \
+	--machine_rank 0 \
+	--deepspeed_multinode_launcher standard scripts/finetune.py \
+    --experiment_name HuatuoGPT \
+	--model_path /path/to/your/model \
+    --gradient_accumulation_steps 8 \
+    --max_ckpts 3 \
+    --max_seq_len 2048 \
+	--data_dir /path/to/your/data \
+	--output_dir ./ckpts \
+	--log_dir ./train_logs \
+	--n_epochs 3 \
+	--train_bsz_per_gpu 2 \
+	--eval_bsz_per_gpu 2 \
+	--learning_rate 5e-5 \
+	--eval_step -1 \
+	--save_step -1 \
+    --gradient_checkpointing
+```
 
 ## 🤖 Limitations
 
