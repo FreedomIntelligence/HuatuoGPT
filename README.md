@@ -151,7 +151,9 @@ Our goal with HuatuoGPT is to address the need for quick medical consultations, 
 
 We are aware that our works are inspired by the following works, including but not limited to
 
-- Bloom: https://huggingface.co/bigscience/bloom
+- IDEA-CCNL/Ziya-LLaMA-13B-Pretrain-v1: https://huggingface.co/IDEA-CCNL/Ziya-LLaMA-13B-Pretrain-v1
+- Baichuan-7B: https://huggingface.co/baichuan-inc/baichuan-7B
+- LLaMA: https://arxiv.org/abs/2302.13971
 - Self-instruct: https://github.com/yizhongw/self-instruct
 
 Without these, nothing could happen in this repository.
