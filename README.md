@@ -1,6 +1,7 @@
 # HuatuoGPT (华佗GPT), Towards Taming Language Models To Be a Doctor.
 
 ## ✨ Latest News
+- [06/30/2023]: Evaluation data of HuatuoGPT released in the `eval/` folder.
 - [06/30/2023]: Release the code, model weights of [HuatuoGPT-7B](https://huggingface.co/FreedomIntelligence/HuatuoGPT-7B) and [HuatuoGPT-13B](https://huggingface.co/FreedomIntelligence/HuatuoGPT-13b-delta)
 - [05/25/2023]: Release the [tech report](https://arxiv.org/pdf/2305.15075.pdf) and the HuatuoGPT [demo](https://www.huatuogpt.cn/).
 
@@ -84,7 +85,7 @@ Try our model in [https://www.huatuogpt.cn/](https://www.huatuogpt.cn/). Note th
 ## 🧐 Evaluations
 
 ### Evaluation by GPT-4 and Doctors
-We invite GPT-4 and doctors to compare responses from HuatuoGPT(13B version) and other LLMs. Results are as below:
+We invite GPT-4 and doctors to compare responses from HuatuoGPT(13B version) and other LLMs. Evaluation data is available in the `eval/` folder. Results are as below:
 
 - Single turn evaluation
 
