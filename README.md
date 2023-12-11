@@ -71,7 +71,7 @@ pip install -r requirements.txt
 
 Please make sure you have download our model weights and run
 ```bash
-python -m huatuo_cli_demo_stream.py --model-name $model_dir
+python huatuo_cli_demo_stream.py --model-name $model_dir
 ```
 
 
