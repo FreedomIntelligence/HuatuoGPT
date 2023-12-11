@@ -1,6 +1,7 @@
 # HuatuoGPT (华佗GPT), Towards Taming Language Models To Be a Doctor.
 
 ## ✨ Latest News
+- [12/11/2023]: 🎉🎉🎉 Our paper is accepted for EMNLP 2023! Check it out [here](https://aclanthology.org/2023.findings-emnlp.725/).
 - [11/25/2023]: We realeased HuatuoGPT-II, which achieved a new state-of-the-art in Chinese medical applications! See [here](https://github.com/FreedomIntelligence/HuatuoGPT-II).
 - [09/26/2023]: Release [HuatuoGPT-reward-model](https://huggingface.co/FreedomIntelligence/HuatuoGPT-reward-model-7B).
 - [06/30/2023]: Evaluation data of HuatuoGPT released in the `eval/` folder.
